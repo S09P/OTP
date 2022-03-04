@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+    <div class="header">
+      <h1>OTP Verification Page</h1>
+    </div>
+    <div class="main">
+      <form class="" action="index.html" method="post">
+      <div class="email">
+        <h1 id="one">Email</h1>
+        <input id="email" type="email" name="" value="" placeholder="Enter Email" required>
+      </div>
+      <div class="getotp">
+        <button class="geto" type="button" name="button" onclick="getotp()">Get OTP</button>
+      </div>
+    <div class="password">
+      <h1>OTP</h1>
+      <input id="pass" type="password" name="" value="" placeholder="Enter OTP" required>
+    </div>
+    <div class="submit">
+    <input onclick="login()" type="submit" name="" value="LOGIN">
+    </div>
+      </form>
+    </div>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script type="text/javascript">
+    function generateotp(){
+      var string='0123456789abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+      let otp='';
+      var len=string.length;
+      for(let i=0;i<6;i++){
+        otp+=string[Math.floor(Math.random()*len)];
+      }
+      return otp;
+    }
+    var b=generateotp();
+    function getotp(){
+
+      var a =document.getElementById('email').value;
+      console.log(a);
+if(a!=""){
+
+      var c="Your One Time Passcode for login is "+"  "+b;
+
+      Email.send({
+        Host: "smtp.elasticemail.com",
+        Username: "pathakshivam219@gmail.com",
+        Password: "7F30D887CA9369BC281B1C93DB1457EC4B50",
+        To:  a,
+        From:"pathakshivam219@gmail.com",
+        Subject: "One Time Passcode for login",
+        Body: c,
+      })
+        .then(function (message) {
+          alert("mail sent successfully(you may have to check spam mail for the password)")
+        });}
+        else{
+          alert("Enter Valid Email address")
+        }
+
+     }
+     function login(){
+       var d=document.getElementById('pass').value;
+       if(d==b){
+         alert("Login Successfull");
+       }else{
+         alert("Login Failed");
+       }
+     }
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,86 @@
+html{
+overflow: hidden;
+  font-size: 62.25%;
+}
+
+body{
+
+    height: 100vh;
+     background: linear-gradient(rgb(49, 92, 55),rgb(179, 204, 69));
+}
+.header {
+  display: flex;
+  justify-content: center;
+  margin-left: -5%;
+  font-size: 3rem;
+}
+.main{
+  border: 1px solid black;
+  width: 40rem;
+  height: 30rem;
+  margin-left: 33%;
+  margin-top: 5%;
+  box-shadow: 5px 5px;
+}
+.email{
+  display: flex;
+  flex-direction: column;
+  justify-content:  space-between;
+  align-items:  center;
+}
+.getotp{
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+.getotp button{
+  background-color: cyan;
+  border-radius: 0.6rem;
+}
+.email h1{
+
+  font-size: 4rem;
+}
+.email input{
+  width: 30rem;
+  border-radius: 1rem;
+  background-color: lightblue;
+}
+.password{
+  margin-top: 2rem;
+  display: flex;
+
+  justify-content: space-around;
+  align-items:  center;
+}
+.password h1{
+
+  font-size: 2rem;
+}
+.password input{
+  background-color: lightblue;
+  width: 30rem;
+  border-radius: 1rem;
+}
+.submit{
+  margin-top: 2rem;
+  display: flex;
+
+  justify-content: space-around;
+  align-items:  center;
+}
+.submit input{
+  background-color: orange;
+  border-radius: 0.6rem;
+}
+@media (max-width:998px) {
+  html{
+    font-size: 60%;
+  }
+}
+@media (max-width:768px) {
+  html{
+    font-size: 55%;
+  }
+
+}
